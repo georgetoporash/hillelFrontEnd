@@ -1,0 +1,84 @@
+input, button, body {
+	font-size: 20px;
+}
+h3 {
+	font-size: 30px;
+}
+.content {
+	width:80%;
+	margin:auto;
+}
+.list {
+	margin: 0;
+	padding: 0;
+}
+.list li {
+	list-style: none;
+	background-color: gray;
+	padding: 5px;
+	margin: 5px;
+}
+.list li:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.list li button {
+	float: right;
+}
+.list li.open div {
+	display: none;
+}
+.close-1 {
+	background-color: #4CAF50;
+	border: 1px black;
+	position: absolute;
+	right: 0px;
+	top: 0;
+	margin: 5px;
+	padding: 5px 5px 5px 5px
+}
+.close-2 {
+	background-color: #4CAF50;
+	border: 1px black;
+	position: absolute;
+	right: 0px;
+	top: 0;
+	margin: 5px;
+	padding: 5px 5px 5px 5px
+}
+.close-1:hover {
+	cursor: pointer;
+	background-color: red;
+}
+.close-2:hover {
+	cursor: pointer;
+	background-color: red;
+}
+
+.popup-wrapper div.shown {
+	display: block;
+
+}
+.popup-wrapper div.hidden {
+	display: none;
+}
+#popup-1 {
+	background-color: forestgreen;
+	padding: 10px;
+	width: 400px;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	margin-left: -200px;
+}
+#popup-2 {
+	background-color: forestgreen;
+	padding: 10px;
+	width: 400px;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	margin-left: -200px;
+}
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrototypeTaskTwo</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    //Задание на прототипы 2
+    function Student(name, surname, born, arr_marks, arr_attendance) {
+        this.name = name;
+        this.surname = surname;
+        this.born = born;
+        this.arr_marks = arr_marks;
+        this.arr_attendance = arr_attendance;
+
+        this.averAtt = function() {
+            var count = 0;
+            for (var i = 0; i < arr_attendance.length; i++) {
+                if (arr_attendance[i] == true) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        this.averMark = function() {
+            var arr_sum = arr_marks.reduce(function(a, b) {
+                return a + b;
+            });
+            var aver_mark = arr_sum / arr_marks.length;
+            return aver_mark.toFixed(2);
+        }
+    }
+    //Массивы оценок студентов
+    var marks_g = [100, 90, 111, 90, 80, 120, 100];
+    var marks_n = [80, 90, 50, 90, 80, 70, 67];
+    var marks_g1 = [100, 30, 111, 90, 80, 120, 100];
+    var marks_n1 = [80, 90, 50, 10, 80, 70, 67];
+
+    //Массивы посещаемости занятий 
+    var arr_attendance_g = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false];
+    var arr_attendance_n = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false];
+    var arr_attendance_g1 = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, false, false];
+    var arr_attendance_n1 = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, false, false, false, false];
+
+    //Объекты из прошлого задания на прототипы
+    var student_g = new Student("george", "ivanov", 1998, marks_g, arr_attendance_g);
+    var student_n = new Student("nick", "petrov", 1999, marks_n, arr_attendance_n);
+    var student_g1 = new Student("george1", "ivanov1", 1997, marks_g1, arr_attendance_g1);
+    var student_n1 = new Student("nick1", "petrov1", 1991, marks_n1, arr_attendance_n1);
+
+    //Конструктор массива
+    function ArrConstructor() {
+        this.attendance = function(surname) {
+                //Подсчет средней посещаемости группы за одно занятие 
+                if (surname == null) {
+                    var arr_averAttend = [];
+                    for (var i = 0; i < arr_students.length; i++) {
+                        arr_averAttend[i] = arr_students[i].averAtt();
+                    }
+                    var arr_sum = arr_averAttend.reduce(function(a, b) {
+                        return a + b;
+                    });
+                    console.log(".attendance");
+                    console.log("Средняя посещаемость группы: " + Math.floor(arr_sum / 25) + " чел.");
+                    console.log(" ");
+                    ////////////////////////////////////////////////////////////////////////////////////
+
+                    //Подсчет рейтинга посещаемости занятий студентом
+                } else if (function(surname) {
+                        var arr_count = [];
+                        var arr_surname = [];
+                        for (var j = 0; j < arr_students.length; j++) {
+                            arr_count[j] = arr_students[j].averAtt();
+                            arr_surname[j] = arr_students[j].surname;
+                        }
+                        var indexarr = arr_surname.indexOf(surname);
+                        var elemarr = arr_count[indexarr];
+                        var newarr = arr_count.slice();
+                        newarr.sort(function(a, b) {
+                            return -(a - b);
+                        });
+                        var indexplace = newarr.indexOf(elemarr);
+                        var place = indexplace + 1;
+                        console.log("Студент " + surname + " посетил " + elemarr + " занятий и получил " + place + " место в рейтинге");
+                        for (var i1 = 0; i1 < arr_students.length; i1++) {
+                            if (arr_students[i1].surname == surname) {
+                                return true;
+                            }
+                        }
+                    }(surname)) {} else {
+                    console.log("Введите фамилию корректно!");
+                }
+            }
+            ///////////////////////////////////////////////////////////////////
+
+        this.performance = function(surname) {
+            //Подсчет средней оценки группы за одно занятие 
+            if (surname === undefined) {
+                var arr_avermark = [];
+                for (var i = 0; i < arr_students.length; i++) {
+                    arr_avermark[i] = Number(arr_students[i].averMark());
+                }
+                var arr_sum = arr_avermark.reduce(function(a, b) {
+                    return a + b;
+                });
+                console.log(" ");
+                console.log(".performance");
+                console.log("Средняя оценка группы за урок: " + arr_sum / arr_students.length + " %");
+                console.log(" ");
+                ////////////////////////////////////////////////////////////////////////////////////
+
+                //Подсчет рейтинга оценок студента
+            } else if (function(surname) {
+                    var avermark = [];
+                    var arr_surname = [];
+                    for (var i0 = 0; i0 < arr_students.length; i0++) {
+                        avermark[i0] = arr_students[i0].averMark();
+                        arr_surname[i0] = arr_students[i0].surname;
+                    }
+                    var indexarr = arr_surname.indexOf(surname);
+                    var elemarr = avermark[indexarr];
+                    var newarr = avermark.slice();
+                    newarr.sort(function(a, b) {
+                        return -(a - b);
+                    });
+                    var indexplace = newarr.indexOf(elemarr);
+                    var place = indexplace + 1;
+                    console.log("Студент " + surname + " занял " + place + " место (" + elemarr + " %)");
+                    for (var i2 = 0; i2 < arr_students.length; i2++) {
+                        if (arr_students[i2].surname == surname) {
+                            return true;
+                        }
+                    }
+                }(surname)) {} else {
+                console.log("Введите фамилию корректно!");
+            }
+            ///////////////////////////////////////////////////////////////////
+        }
+    }
+    var arr_students = [];
+    arr_students.push(student_g); 
+    arr_students.push(student_n); 
+    arr_students.push(student_g1); 
+    arr_students.push(student_n1); 
+    
+    
+    var arrConstructor = new ArrConstructor();
+    arrConstructor.prototype = Object.create(Array.prototype);
+    arrConstructor.prototype.push(arr_students);
+
+    console.log(arrConstructor);
+    console.log(" ");
+    arrConstructor.attendance();
+    arrConstructor.attendance("ivanov");
+    arrConstructor.attendance("ivanov1");
+    arrConstructor.attendance("petrov1");
+    arrConstructor.attendance("petrov");
+
+    arrConstructor.performance();
+    arrConstructor.performance("ivanov1");
+    arrConstructor.performance("ivanov");
+    arrConstructor.performance("petrov");
+    arrConstructor.performance("petrov1");
+    </script>
+</body>
+
+</html>

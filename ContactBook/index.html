@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+<body>
+	<p id="cake"></p>
+	<input id="searchName" type="text">
+	<button id="search">search</button>
+	<button id="add">add</button>
+	<ul class="list"></ul>
+	<div class="popup-wrapper">
+		<div id="popup-1" class = "hidden">
+			<p id="warning"></p>
+			<span class ="close-1">&#215;</span>
+			<label>Name: </label><br><input id="name" type="text" placeholder="Enter Name"><br>
+			<label>Number: </label><br><input id="number" type="text" placeholder="Enter Number"><br>
+				<div id = "numbers"></div>
+			<label>Email: </label><br><input id="email" type="text" placeholder="Enter Email"><br>
+			<label>Birthday: </label><br><input id="birthday" type="text" placeholder="Birthday: yyyy-mm-dd"><br><br>
+			<button id="confirm" clss = "confirm1">Ok</button>
+			<button id="addnum">Add Number</button>
+		</div>
+		<div id="popup-2" class = "hidden">
+			<span class ="close-2">&#215;</span>
+			<h3 id="name-view"></h3>
+			<h3 id="number-view"></h3>
+			<h3 id="numbers-view"></h3>
+			<h3 id="email-view"></h3>
+			<h3 id="birthday-view"></h3>
+			<button id="edit">Edit</button>
+		</div>
+	</div>
+	<script src="js/controller_new.js"></script>
+</body>
+</html>

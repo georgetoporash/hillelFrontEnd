@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ArrClone</title>
+</head>
+
+<body>
+    <script>
+    // Клонирование массива
+    var arr = [
+        [11, 22], 2, 3, 4, 5, 6
+    ];
+    var brr = clone(arr);
+    brr[0][0] = 42;
+    console.log("Клонирование массива");
+    console.log("brr: " + brr);
+    console.log("arr: " + arr);
+
+    function clone(arr) {
+        var arr_clone = [];
+        for (var i = 0; i <= arr.length - 1; i++) {
+            if (Array.isArray(arr[i])) {
+                arr_clone[i] = clone(arr[i]);
+            } else {
+                arr_clone[i] = arr[i];
+            }
+        }
+        return arr_clone;
+    }
+    // ------------------------------------------------------------------------
+    </script>
+</body>
+
+</html>

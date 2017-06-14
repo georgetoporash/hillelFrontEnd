@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LeftPad</title>
+</head>
+
+<body>
+    <script>
+    var word1 = prompt("Введи слово1: ");
+    var limit1 = prompt("Введи ограничение1: ");
+    var word2 = prompt("Введи слово2: ");
+    var limit2 = prompt("Введи ограничение2: ");
+
+    LeftPad(word1, limit1);
+    LeftPad(word2, limit2);
+
+    function LeftPad(str, lim) {
+        var num = Number(lim);
+        if (num !== NaN && num !== undefined && str !== undefined && num > 0) {
+            var arr = [];
+            var dif = num - str.length;
+            if (dif < 0) {
+                sub = str.substring(num, 0);
+                str = sub;
+            } else {
+                for (var i = 0; i < dif; i++) {
+                    arr.push(" ");
+                }
+            }
+            for (var i = 0; i < str.length; i++) {
+                arr.push(str[i]);
+            }
+            var editStr = arr.join("");
+            console.log(editStr);
+            return editStr;
+        } else {
+            alert("Введи правильные аргументы!");
+        }
+    }
+    </script>
+</body>
+
+</html>

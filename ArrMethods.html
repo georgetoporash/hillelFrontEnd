@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ArrMethods</title>
+</head>
+
+<body>
+    <script>
+    // Методы массивов
+    console.log(" ");
+    console.log("Методы массивов");
+    var arr_t2 = [-246, 753, -468, 475, -683, 476, -583, 746, -581];
+    var arr_div = arr_t2.slice();
+    var arr_neg = arr_t2.slice();
+    console.log("Наш массив: " + arr_t2);
+    //Сумма
+    var arr_sum = arr_t2.reduce(function(a, b) {
+        return a + b;
+    });
+    console.log("Cумма элементов массива: " + arr_sum);
+    //Отрицательные элементы
+    var neg = arr_neg.filter(function(number) {
+        return number < 0;
+    });
+    console.log("Отрицательные элементы массива: " + neg);
+    //Сортировка по возрастанию
+    arr_t2.sort(function(a, b) {
+        return a - b;
+    });
+    //Сортировка по убыванию
+    console.log("Сортировка по возрастанию: " + arr_t2);
+    arr_t2.sort(function(a, b) {
+        return -(a - b);
+    });
+    console.log("Сортировка по убыванию: " + arr_t2);
+    //Получить массив из элементов деленных на два
+    var div_res = arr_div.map(function(div) {
+        return div / 2;
+    });
+    console.log("Деленние на два: " + div_res);
+    // ------------------------------------------------------------------------
+    </script>
+</body>
+
+</html>
