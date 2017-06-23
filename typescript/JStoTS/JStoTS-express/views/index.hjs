@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Прототипы на typescript</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<script src="/js/main.js"></script>
+</head>
+<body>
+	<h1>Веселые задачки на прототипы</h1>
+	<form action="/" method="POST">
+		<label for="num">Введите число: </label><br>
+		<input id = "num" name = "num" type="text" value = "2017" placeholder="Enter Number"><br><br>
+
+
+		<input value = "Submit"  type="submit">
+	</form>
+	<h3>{{ rbody }}</h3>
+	<h2>Посмотри консоль браузера</h2>
+	<a href="/js/main.ts">Скачать Файл TS</a>
+	<a href="/js/main.js">Скачать Файл JS</a>
+
+</body>
+</html>
